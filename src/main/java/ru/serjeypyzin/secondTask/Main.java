@@ -15,13 +15,13 @@ public class Main {
     public static void main(String[] args) {
         int[] gameField = {1, 2, 0, 3, 1, 0, 2, 0, 3};
 
-        try (DataOutputStream dos = new DataOutputStream(new FileOutputStream("gameField.dat"))) {
+        try (DataOutputStream dos = new DataOutputStream(new FileOutputStream("gameField.txt"))) {
             int compactedValue = 0;
 
             for (int i = 0; i < gameField.length; i++) {
                 compactedValue |= (gameField[i] & 0x03) << (2 * (2 - i % 3));
 
-                if (i % 3 == 2 || i == gameField.length - 1) {
+                if (i % 3 == 2) {
                     dos.writeByte(compactedValue);
                     compactedValue = 0;
                 }
