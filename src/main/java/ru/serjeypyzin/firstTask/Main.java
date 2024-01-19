@@ -6,6 +6,10 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
 
+/*
+* Написать функцию, создающую резервную копию всех файлов
+* в директории(без поддиректорий) во вновь созданную папку ./backup
+* */
 public class Main {
     public static void main(String[] args) {
         backupFiles(".");
